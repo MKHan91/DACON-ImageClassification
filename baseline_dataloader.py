@@ -12,10 +12,12 @@ def load_dataset():
     x_train = train.drop(['id', 'digit', 'letter'], axis=1).values
     x_train = x_train.reshape(-1, 28, 28, 1)
     y = train['digit']
-    # one-hot encoding: 레이블을 모델이 학습할 수 있게 형태를 변환해주는 과정.
-    y_train = np.zeros((len(y), len(y.unique())))
-    for i, digit in enumerate(y):
-        y_train[i, digit] = 1
+    # # one-hot encoding: 레이블을 모델이 학습할 수 있게 형태를 변환해주는 과정.
+    # y_train = np.zeros((len(y), len(y.unique())))
+    # for i, digit in enumerate(y):
+    #     y_train[i, digit] = 1
+    
+    y_train = np.array(y)
     
     x_test = test.drop(['id', 'letter'], axis=1).values
     x_test = x_test.reshape(-1, 28, 28, 1)

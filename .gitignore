@@ -3,3 +3,4 @@ DOCUMENTS
 *.zip
 BaseLine_pytorch.ipynb
 DATASET
+__pycache__
